@@ -1,0 +1,22 @@
+name: github checkout
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 마켓플레이스에 있는 걸 가져다 쓰는 것!
+      # 클론하고 체크아웃 해주는 것
+      - uses: actions/checkout@v3
+
+      - name: Run pwd
+        run: pwd
+
+      - name: Run ls -al
+        run: ls -al
