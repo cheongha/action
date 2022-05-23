@@ -1,0 +1,31 @@
+name: Hello World
+
+# Controls when the workflow will run
+on:
+  # main branch에 push 되면 실행
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  # workflow_dispatch:
+
+# 다음 정의된 것들을 진행
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # runner 컴퓨터의 환경
+    runs-on: ubuntu-latest
+
+    # 실제로 해야되는 일
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # - uses: actions/checkout@v3
+
+      - name: Run pwd
+        run: pwd
+
+      - name: Run ls -al
+        run: ls -al
